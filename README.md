@@ -125,6 +125,7 @@ To change the vendored binaries for Bundler, [Node.js](http://github.com/joyent/
 For example, you can change the vendored version of Bundler to 1.1.rc.
 make sure you installed [aws cli](https://aws.amazon.com/cn/cli/) first.
 
+    $ export AWS_ID=xxx AWS_SECRET=yyy S3_BUCKET=my_bucket_name
     $ aws s3 mb s3://my_bucket_name
     $ bundle install
     $ bundle exec rake gem:install[bundler,1.1.rc]
