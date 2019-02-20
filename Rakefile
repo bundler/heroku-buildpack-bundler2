@@ -47,7 +47,7 @@ def install_gem(gem_name, version)
       FileUtils.rm_rf("#{tmpdir}/*")
 
       in_gem_env(tmpdir) do
-        sh("unset RUBYOPT; gem install #{gem_name} --version #{version} --no-ri --no-rdoc --env-shebang")
+        sh("unset RUBYOPT; gem install #{gem_name} --version #{version} -no-ri-no-rdoc --env-shebang")
         sh("rm -f #{gem_name}-#{version}.gem")
         sh("rm -rf cache/#{gem_name}-#{version}.gem")
         sh("tar czvf #{tmpdir}/#{name}.tgz *")

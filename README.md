@@ -128,7 +128,9 @@ To use this buildpack, fork it on Github.  Push up changes to your fork, then cr
 To change the vendored binaries for Bundler, [Node.js](http://github.com/joyent/node), and rails plugins, use the rake tasks provided by the `Rakefile`. You'll need an S3-enabled AWS account and a bucket to store your binaries in as well as the [vulcan](http://github.com/heroku/vulcan) gem to build the binaries on heroku.
 
 For example, you can change the vendored version of Bundler to 1.1.rc.
+make sure you installed [aws cli](https://aws.amazon.com/cn/cli/) first.
 
+    $ export AWS_ID=xxx AWS_SECRET=yyy S3_BUCKET=my_bucket_name
     $ aws s3 mb s3://my_bucket_name
     $ bundle install
     $ bundle exec rake gem:install[bundler,1.1.rc]
